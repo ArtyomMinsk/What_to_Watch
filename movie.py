@@ -5,8 +5,6 @@ import csv
 
 class Movie:
 
-    #m = Movie()
-
     def __init__(self, row):
         self.movie_id = row[0]
         self.movie_title = row[1]
@@ -34,7 +32,7 @@ class Movie:
         self.Western = row[23]
 
         # Returns list of lists
-    def read_file():
+    def read_movie_file():
         #list of the lists
         movie_rows_list = []
 
@@ -42,37 +40,16 @@ class Movie:
             reader = csv.reader(movie_file, delimiter = '|')
             for row in reader:
                 movie_rows_list.append(row)
-            print(movie_rows_list)
-            print("\ntitle: ", row[1])
-            print("\nmovie_rows_list[0]: ", movie_rows_list[0])
 
+        # print(movie_rows_list)
         return movie_rows_list
 
     # Return mobie names by movie_id as dictionary
-    def get_movie_name():
-        movie_rows_list = Movie.read_file()
-        for movie in movie_rows_list:
-            my_dict = dict([(int(movie[0]), movie[1])])
-            print(my_dict)
-        #movie_name = self.movie_title
+    def get_movie_name(item_id):
+        movie_rows_list = Movie.read_movie_file()
 
-        return my_dict
+        movie_row = movie_rows_list[item_id - 1]
+        movie_name = movie_row[1]
 
-Movie.get_movie_name()
-
-    # def get_movie_id(self):
-    #     return self.movie_id
-    #
-    # def get_title(self):
-    #     return self.movie_title
-    #
-    # def get_release_date(self):
-    #     return self.release_date
-
-
-    #####
-    # my_movie1 = Movie(row[0])
-    # movie_title1 = my_movie1.get_title()
-
-    # my_movie2 = Movie(row[1])
-    # movie_title2 = my_movie2.get_title()
+        print(movie_name)
+        return movie_name
