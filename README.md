@@ -2,14 +2,14 @@
 
 ## Description
 
-Movie recommender.
+This program will recommend the most popular movies to watch for a given user.
 
 ## How To Run The Program
 
 Run the popylar_movies.py file to run the program. It'll ask you to enter the top number of popular movies and the minimum number of ratings. After it shows you the list of movies according to the input requirements the program will ask to input the user_id to filter popular movies list.
 
 
-# Sample Output
+## Sample Output
 
 Here is some sample output when you run the program. It shows a list of top 15 most popular movies, and then filters that list for user 555. As you can see, user 555 has already seen "Schindler's List" and "Star Wars (1977)" and therefore, these two movies do now show up in their list.
 
